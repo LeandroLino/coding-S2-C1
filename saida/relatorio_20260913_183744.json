@@ -1,0 +1,829 @@
+{
+  "total_eventos": 58,
+  "total_alertas": 31,
+  "eventos": [
+    {
+      "timestamp": "2025-02-20 08:15:01",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "admin",
+      "detalhes": "usuario=admin",
+      "linha_original": "2025-02-20 08:15:01 FAIL usuario=admin ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:02",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "root",
+      "detalhes": "usuario=root",
+      "linha_original": "2025-02-20 08:15:02 FAIL usuario=root ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:03",
+      "fonte": "auth",
+      "tipo": "OK",
+      "ip": "192.168.1.10",
+      "usuario": "carlos",
+      "detalhes": "usuario=carlos",
+      "linha_original": "2025-02-20 08:15:03 OK usuario=carlos ip=192.168.1.10"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:05",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "91.240.118.172",
+      "usuario": "admin",
+      "detalhes": "usuario=admin",
+      "linha_original": "2025-02-20 08:15:05 FAIL usuario=admin ip=91.240.118.172"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:06",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "test",
+      "detalhes": "usuario=test",
+      "linha_original": "2025-02-20 08:15:06 FAIL usuario=test ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:08",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "admin",
+      "detalhes": "usuario=admin",
+      "linha_original": "2025-02-20 08:15:08 FAIL usuario=admin ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:10",
+      "fonte": "auth",
+      "tipo": "OK",
+      "ip": "192.168.1.45",
+      "usuario": "ana",
+      "detalhes": "usuario=ana",
+      "linha_original": "2025-02-20 08:15:10 OK usuario=ana ip=192.168.1.45"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:12",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "91.240.118.172",
+      "usuario": "root",
+      "detalhes": "usuario=root",
+      "linha_original": "2025-02-20 08:15:12 FAIL usuario=root ip=91.240.118.172"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:15",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "45.33.32.156",
+      "usuario": "admin",
+      "detalhes": "usuario=admin",
+      "linha_original": "2025-02-20 08:15:15 FAIL usuario=admin ip=45.33.32.156"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:16",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "admin",
+      "detalhes": "usuario=admin",
+      "linha_original": "2025-02-20 08:15:16 FAIL usuario=admin ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:18",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "root",
+      "detalhes": "usuario=root",
+      "linha_original": "2025-02-20 08:15:18 FAIL usuario=root ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:20",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "91.240.118.172",
+      "usuario": "guest",
+      "detalhes": "usuario=guest",
+      "linha_original": "2025-02-20 08:15:20 FAIL usuario=guest ip=91.240.118.172"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:22",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "admin",
+      "detalhes": "usuario=admin",
+      "linha_original": "2025-02-20 08:15:22 FAIL usuario=admin ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:25",
+      "fonte": "auth",
+      "tipo": "OK",
+      "ip": "10.0.0.5",
+      "usuario": "bruno",
+      "detalhes": "usuario=bruno",
+      "linha_original": "2025-02-20 08:15:25 OK usuario=bruno ip=10.0.0.5"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:28",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "sa",
+      "detalhes": "usuario=sa",
+      "linha_original": "2025-02-20 08:15:28 FAIL usuario=sa ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:30",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "91.240.118.172",
+      "usuario": "admin",
+      "detalhes": "usuario=admin",
+      "linha_original": "2025-02-20 08:15:30 FAIL usuario=admin ip=91.240.118.172"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:33",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "root",
+      "detalhes": "usuario=root",
+      "linha_original": "2025-02-20 08:15:33 FAIL usuario=root ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:35",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "45.33.32.156",
+      "usuario": "test",
+      "detalhes": "usuario=test",
+      "linha_original": "2025-02-20 08:15:35 FAIL usuario=test ip=45.33.32.156"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:38",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "admin",
+      "detalhes": "usuario=admin",
+      "linha_original": "2025-02-20 08:15:38 FAIL usuario=admin ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:40",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "185.220.101.1",
+      "usuario": "root",
+      "detalhes": "usuario=root",
+      "linha_original": "2025-02-20 08:15:40 FAIL usuario=root ip=185.220.101.1"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:42",
+      "fonte": "auth",
+      "tipo": "OK",
+      "ip": "192.168.1.20",
+      "usuario": "diana",
+      "detalhes": "usuario=diana",
+      "linha_original": "2025-02-20 08:15:42 OK usuario=diana ip=192.168.1.20"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:45",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "91.240.118.172",
+      "usuario": "admin",
+      "detalhes": "usuario=admin",
+      "linha_original": "2025-02-20 08:15:45 FAIL usuario=admin ip=91.240.118.172"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:48",
+      "fonte": "auth",
+      "tipo": "FAIL",
+      "ip": "45.33.32.156",
+      "usuario": "oracle",
+      "detalhes": "usuario=oracle",
+      "linha_original": "2025-02-20 08:15:48 FAIL usuario=oracle ip=45.33.32.156"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:01",
+      "fonte": "firewall",
+      "tipo": "ALLOW",
+      "ip": "192.168.1.10",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 443,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=443",
+      "linha_original": "2025-02-20 08:10:01 ALLOW proto=TCP src=192.168.1.10 dst=10.0.0.1 dport=443"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:02",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "185.220.101.1",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 22,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=22",
+      "linha_original": "2025-02-20 08:10:02 BLOCK proto=TCP src=185.220.101.1 dst=10.0.0.1 dport=22"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:03",
+      "fonte": "firewall",
+      "tipo": "ALLOW",
+      "ip": "192.168.1.45",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 80,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=80",
+      "linha_original": "2025-02-20 08:10:03 ALLOW proto=TCP src=192.168.1.45 dst=10.0.0.1 dport=80"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:05",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "91.240.118.172",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 3389,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=3389",
+      "linha_original": "2025-02-20 08:10:05 BLOCK proto=TCP src=91.240.118.172 dst=10.0.0.1 dport=3389"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:06",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "185.220.101.1",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 23,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=23",
+      "linha_original": "2025-02-20 08:10:06 BLOCK proto=TCP src=185.220.101.1 dst=10.0.0.1 dport=23"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:08",
+      "fonte": "firewall",
+      "tipo": "ALLOW",
+      "ip": "192.168.1.10",
+      "dst": "8.8.8.8",
+      "proto": "UDP",
+      "dport": 53,
+      "detalhes": "proto=UDP dst=8.8.8.8 dport=53",
+      "linha_original": "2025-02-20 08:10:08 ALLOW proto=UDP src=192.168.1.10 dst=8.8.8.8 dport=53"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:10",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "185.220.101.1",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 445,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=445",
+      "linha_original": "2025-02-20 08:10:10 BLOCK proto=TCP src=185.220.101.1 dst=10.0.0.1 dport=445"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:12",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "45.33.32.156",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 1433,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=1433",
+      "linha_original": "2025-02-20 08:10:12 BLOCK proto=TCP src=45.33.32.156 dst=10.0.0.1 dport=1433"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:15",
+      "fonte": "firewall",
+      "tipo": "ALLOW",
+      "ip": "192.168.1.20",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 443,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=443",
+      "linha_original": "2025-02-20 08:10:15 ALLOW proto=TCP src=192.168.1.20 dst=10.0.0.1 dport=443"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:18",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "185.220.101.1",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 8080,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=8080",
+      "linha_original": "2025-02-20 08:10:18 BLOCK proto=TCP src=185.220.101.1 dst=10.0.0.1 dport=8080"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:20",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "91.240.118.172",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 22,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=22",
+      "linha_original": "2025-02-20 08:10:20 BLOCK proto=TCP src=91.240.118.172 dst=10.0.0.1 dport=22"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:22",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "185.220.101.1",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 3306,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=3306",
+      "linha_original": "2025-02-20 08:10:22 BLOCK proto=TCP src=185.220.101.1 dst=10.0.0.1 dport=3306"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:25",
+      "fonte": "firewall",
+      "tipo": "ALLOW",
+      "ip": "10.0.0.5",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 80,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=80",
+      "linha_original": "2025-02-20 08:10:25 ALLOW proto=TCP src=10.0.0.5 dst=10.0.0.1 dport=80"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:28",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "45.33.32.156",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 5432,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=5432",
+      "linha_original": "2025-02-20 08:10:28 BLOCK proto=TCP src=45.33.32.156 dst=10.0.0.1 dport=5432"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:30",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "185.220.101.1",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 21,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=21",
+      "linha_original": "2025-02-20 08:10:30 BLOCK proto=TCP src=185.220.101.1 dst=10.0.0.1 dport=21"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:33",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "91.240.118.172",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 445,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=445",
+      "linha_original": "2025-02-20 08:10:33 BLOCK proto=TCP src=91.240.118.172 dst=10.0.0.1 dport=445"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:35",
+      "fonte": "firewall",
+      "tipo": "BLOCK",
+      "ip": "185.220.101.1",
+      "dst": "10.0.0.1",
+      "proto": "TCP",
+      "dport": 139,
+      "detalhes": "proto=TCP dst=10.0.0.1 dport=139",
+      "linha_original": "2025-02-20 08:10:35 BLOCK proto=TCP src=185.220.101.1 dst=10.0.0.1 dport=139"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:01",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "192.168.1.10",
+      "url": "/index.html",
+      "status": 200,
+      "detalhes": "url=/index.html status=200",
+      "linha_original": "2025-02-20 08:20:01 GET url=/index.html ip=192.168.1.10 status=200"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:02",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "185.220.101.1",
+      "url": "/login",
+      "status": 200,
+      "detalhes": "url=/login status=200",
+      "linha_original": "2025-02-20 08:20:02 GET url=/login ip=185.220.101.1 status=200"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:03",
+      "fonte": "web",
+      "tipo": "POST",
+      "ip": "185.220.101.1",
+      "url": "/login",
+      "status": 401,
+      "detalhes": "url=/login status=401",
+      "linha_original": "2025-02-20 08:20:03 POST url=/login ip=185.220.101.1 status=401"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:04",
+      "fonte": "web",
+      "tipo": "POST",
+      "ip": "185.220.101.1",
+      "url": "/login",
+      "status": 401,
+      "detalhes": "url=/login status=401",
+      "linha_original": "2025-02-20 08:20:04 POST url=/login ip=185.220.101.1 status=401"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:05",
+      "fonte": "web",
+      "tipo": "POST",
+      "ip": "185.220.101.1",
+      "url": "/login",
+      "status": 401,
+      "detalhes": "url=/login status=401",
+      "linha_original": "2025-02-20 08:20:05 POST url=/login ip=185.220.101.1 status=401"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:06",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "185.220.101.1",
+      "url": "/admin",
+      "status": 403,
+      "detalhes": "url=/admin status=403",
+      "linha_original": "2025-02-20 08:20:06 GET url=/admin ip=185.220.101.1 status=403"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:08",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "91.240.118.172",
+      "url": "/../../etc/passwd",
+      "status": 400,
+      "detalhes": "url=/../../etc/passwd status=400",
+      "linha_original": "2025-02-20 08:20:08 GET url=/../../etc/passwd ip=91.240.118.172 status=400"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:10",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "192.168.1.45",
+      "url": "/index.html",
+      "status": 200,
+      "detalhes": "url=/index.html status=200",
+      "linha_original": "2025-02-20 08:20:10 GET url=/index.html ip=192.168.1.45 status=200"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:12",
+      "fonte": "web",
+      "tipo": "POST",
+      "ip": "192.168.1.10",
+      "url": "/api/users",
+      "status": 201,
+      "detalhes": "url=/api/users status=201",
+      "linha_original": "2025-02-20 08:20:12 POST url=/api/users ip=192.168.1.10 status=201"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:15",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "45.33.32.156",
+      "url": "/search?q=<script>alert(1)</script>",
+      "status": 400,
+      "detalhes": "url=/search?q=<script>alert(1)</script> status=400",
+      "linha_original": "2025-02-20 08:20:15 GET url=/search?q=<script>alert(1)</script> ip=45.33.32.156 status=400"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:18",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "91.240.118.172",
+      "url": "/wp-admin",
+      "status": 404,
+      "detalhes": "url=/wp-admin status=404",
+      "linha_original": "2025-02-20 08:20:18 GET url=/wp-admin ip=91.240.118.172 status=404"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:20",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "91.240.118.172",
+      "url": "/phpmyadmin",
+      "status": 404,
+      "detalhes": "url=/phpmyadmin status=404",
+      "linha_original": "2025-02-20 08:20:20 GET url=/phpmyadmin ip=91.240.118.172 status=404"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:22",
+      "fonte": "web",
+      "tipo": "POST",
+      "ip": "185.220.101.1",
+      "url": "/login",
+      "status": 401,
+      "detalhes": "url=/login status=401",
+      "linha_original": "2025-02-20 08:20:22 POST url=/login ip=185.220.101.1 status=401"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:25",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "192.168.1.20",
+      "url": "/api/data",
+      "status": 200,
+      "detalhes": "url=/api/data status=200",
+      "linha_original": "2025-02-20 08:20:25 GET url=/api/data ip=192.168.1.20 status=200"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:28",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "45.33.32.156",
+      "url": "/shell.php",
+      "status": 404,
+      "detalhes": "url=/shell.php status=404",
+      "linha_original": "2025-02-20 08:20:28 GET url=/shell.php ip=45.33.32.156 status=404"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:30",
+      "fonte": "web",
+      "tipo": "POST",
+      "ip": "45.33.32.156",
+      "url": "/upload",
+      "status": 403,
+      "detalhes": "url=/upload status=403",
+      "linha_original": "2025-02-20 08:20:30 POST url=/upload ip=45.33.32.156 status=403"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:33",
+      "fonte": "web",
+      "tipo": "GET",
+      "ip": "10.0.0.5",
+      "url": "/robots.txt",
+      "status": 200,
+      "detalhes": "url=/robots.txt status=200",
+      "linha_original": "2025-02-20 08:20:33 GET url=/robots.txt ip=10.0.0.5 status=200"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:35",
+      "fonte": "web",
+      "tipo": "DELETE",
+      "ip": "185.220.101.1",
+      "url": "/api/users/1",
+      "status": 403,
+      "detalhes": "url=/api/users/1 status=403",
+      "linha_original": "2025-02-20 08:20:35 DELETE url=/api/users/1 ip=185.220.101.1 status=403"
+    }
+  ],
+  "alertas": [
+    {
+      "timestamp": "2025-02-20 08:15:01",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:02",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:05",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "91.240.118.172",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:08",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:12",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "91.240.118.172",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:15",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "45.33.32.156",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:16",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:18",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:22",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:28",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:30",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "91.240.118.172",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:33",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:38",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:40",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:45",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "91.240.118.172",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:15:48",
+      "regra": "Login com Usuario Privilegiado",
+      "severidade": "MEDIA",
+      "ip": "45.33.32.156",
+      "descricao": "Tentativa de login com usuario root, admin, sa ou oracle"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:02",
+      "regra": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "ip": "185.220.101.1",
+      "descricao": "Firewall bloqueou acesso a portas sensiveis"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:05",
+      "regra": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "ip": "91.240.118.172",
+      "descricao": "Firewall bloqueou acesso a portas sensiveis"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:06",
+      "regra": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "ip": "185.220.101.1",
+      "descricao": "Firewall bloqueou acesso a portas sensiveis"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:10",
+      "regra": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "ip": "185.220.101.1",
+      "descricao": "Firewall bloqueou acesso a portas sensiveis"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:12",
+      "regra": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "ip": "45.33.32.156",
+      "descricao": "Firewall bloqueou acesso a portas sensiveis"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:20",
+      "regra": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "ip": "91.240.118.172",
+      "descricao": "Firewall bloqueou acesso a portas sensiveis"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:22",
+      "regra": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "ip": "185.220.101.1",
+      "descricao": "Firewall bloqueou acesso a portas sensiveis"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:28",
+      "regra": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "ip": "45.33.32.156",
+      "descricao": "Firewall bloqueou acesso a portas sensiveis"
+    },
+    {
+      "timestamp": "2025-02-20 08:10:33",
+      "regra": "Acesso a Porta Critica Bloqueado",
+      "severidade": "ALTA",
+      "ip": "91.240.118.172",
+      "descricao": "Firewall bloqueou acesso a portas sensiveis"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:06",
+      "regra": "Reconhecimento Web",
+      "severidade": "MEDIA",
+      "ip": "185.220.101.1",
+      "descricao": "Acesso a URLs comuns de reconhecimento/enumeracao"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:08",
+      "regra": "Tentativa de Path Traversal",
+      "severidade": "CRITICA",
+      "ip": "91.240.118.172",
+      "descricao": "URL contem padroes de path traversal (../)"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:15",
+      "regra": "Tentativa de XSS",
+      "severidade": "ALTA",
+      "ip": "45.33.32.156",
+      "descricao": "URL contem padroes de Cross-Site Scripting"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:18",
+      "regra": "Reconhecimento Web",
+      "severidade": "MEDIA",
+      "ip": "91.240.118.172",
+      "descricao": "Acesso a URLs comuns de reconhecimento/enumeracao"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:20",
+      "regra": "Reconhecimento Web",
+      "severidade": "MEDIA",
+      "ip": "91.240.118.172",
+      "descricao": "Acesso a URLs comuns de reconhecimento/enumeracao"
+    },
+    {
+      "timestamp": "2025-02-20 08:20:28",
+      "regra": "Reconhecimento Web",
+      "severidade": "MEDIA",
+      "ip": "45.33.32.156",
+      "descricao": "Acesso a URLs comuns de reconhecimento/enumeracao"
+    }
+  ],
+  "resumo_ameacas": [
+    {
+      "ip": "185.220.101.1",
+      "motivos": [
+        "Brute Force (11 falhas)",
+        "Port Scan (7 portas distintas)",
+        "IP presente na Blacklist"
+      ],
+      "severidade": "CRITICA",
+      "total_deteccoes": 3
+    },
+    {
+      "ip": "91.240.118.172",
+      "motivos": [
+        "Brute Force (5 falhas)",
+        "Port Scan (3 portas distintas)",
+        "IP presente na Blacklist"
+      ],
+      "severidade": "CRITICA",
+      "total_deteccoes": 3
+    },
+    {
+      "ip": "45.33.32.156",
+      "motivos": [
+        "IP presente na Blacklist"
+      ],
+      "severidade": "ALTA",
+      "total_deteccoes": 1
+    }
+  ]
+}
