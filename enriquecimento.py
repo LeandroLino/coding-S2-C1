@@ -3,7 +3,16 @@
 Responsável por classificar IPs, gerenciar cache e consultar
 a API pública do ipinfo.io para enriquecer alertas do SIEM.
 """
+import sys
+
 import requests
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except (AttributeError, ValueError):
+    pass
+
+
 def eh_ip_privado(ip: str) -> bool:
     """Verifica se um endereço IPv4 pertence a uma rede privada (RFC 1918)
     ou loopback.
@@ -144,11 +153,11 @@ if __name__ == "__main__":
     cache_teste = {}
     # Cenário 1: IP Público conhecido (Google DNS)
     print("[TESTE 1] Consultando 8.8.8.8...")
-    res1 = consultar_ip("-------------", cache_teste)
+    res1 = consultar_ip("8.8.8.8", cache_teste)
     exibir_enriquecimento(res1)
     # Cenário 2: IP Privado RFC 1918
     print("\n[TESTE 2] Consultando IP privado 192.168.1.10...")
-    res2 = consultar_ip("-----------", cache_teste)
+    res2 = consultar_ip("192.168.1.10", cache_teste)
     exibir_enriquecimento(res2)
     # Cenário 3: Cache (deve responder sem nova requisição HTTP)
     print("\n[TESTE 3] Consultando 8.8.8.8 novamente (verificando Cache)...")

@@ -21,6 +21,43 @@ def carregar_regras(caminho_config):
         print(f"[ERRO] Formato JSON inválido no arquivo: {caminho_config}")
         return []
 
+
+def adicionar_regra(caminho_config, nova_regra):
+    """
+    Adiciona uma nova regra ao arquivo regras.json sem exigir edicao manual do
+    codigo/arquivo pelo operador (bonus: regras customizadas via menu).
+
+    - caminho_config: caminho do config/regras.json
+    - nova_regra: dict no mesmo formato das regras existentes
+    Retorna True se a regra foi salva com sucesso, False caso contrario.
+    """
+    try:
+        with open(caminho_config, "r", encoding="utf-8") as arquivo:
+            dados = json.load(arquivo)
+    except FileNotFoundError:
+        dados = {"regras": []}
+    except json.JSONDecodeError:
+        print(f"[ERRO] JSON invalido em {caminho_config}; nao foi possivel adicionar a regra.")
+        return False
+
+    regras_existentes = dados.get("regras", [])
+
+    # Evita ids duplicados, que quebrariam a identificacao das regras
+    if any(r.get("id") == nova_regra.get("id") for r in regras_existentes):
+        print(f"[ERRO] Ja existe uma regra com id {nova_regra.get('id')}.")
+        return False
+
+    regras_existentes.append(nova_regra)
+    dados["regras"] = regras_existentes
+
+    try:
+        with open(caminho_config, "w", encoding="utf-8") as arquivo:
+            json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+        return True
+    except OSError as erro:
+        print(f"[ERRO] Falha ao salvar {caminho_config}: {erro}")
+        return False
+
 # ==========================================
 # BLOCO 2: CLASSIFICAÇÃO DE SEVERIDADE
 # ==========================================

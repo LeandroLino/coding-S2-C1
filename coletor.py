@@ -3,6 +3,8 @@ Módulo 1 — Coletor de Logs (SecuraPy SIEM)
 Lê os arquivos de log e normaliza cada linha em um evento (dict) padronizado.
 """
 
+import hashlib
+import json
 import os
 
 
@@ -166,6 +168,80 @@ def carregar_todos_os_logs(pasta_logs):
         todos_eventos.extend(eventos_do_arquivo)
 
     return todos_eventos
+
+
+def calcular_hash_arquivo(caminho_arquivo):
+    """
+    Calcula o hash SHA-256 do conteudo de um arquivo.
+    Retorna a string hexadecimal do hash, ou None se o arquivo nao existir.
+    """
+    try:
+        hasher = hashlib.sha256()
+        with open(caminho_arquivo, "rb") as arquivo:
+            for bloco in iter(lambda: arquivo.read(8192), b""):
+                hasher.update(bloco)
+        return hasher.hexdigest()
+    except FileNotFoundError:
+        print(f"[ERRO] Nao foi possivel calcular hash: arquivo nao encontrado ({caminho_arquivo})")
+        return None
+
+
+def verificar_integridade_logs(pasta_logs, arquivo_hashes="config/hashes_logs.json"):
+    """
+    Verifica se os arquivos de log da pasta foram alterados desde a ultima
+    execucao, comparando o hash SHA-256 atual com o hash salvo anteriormente.
+
+    Retorna dict: {nome_arquivo: {"status": "novo"|"alterado"|"inalterado",
+                                   "hash_atual": str, "hash_anterior": str|None}}
+    Ao final, grava os hashes atuais em 'arquivo_hashes' para a proxima execucao.
+    """
+    resultado = {}
+
+    try:
+        arquivos = sorted(os.listdir(pasta_logs))
+    except FileNotFoundError:
+        print(f"[ERRO] Pasta de logs não encontrada: {pasta_logs}")
+        return resultado
+
+    try:
+        with open(arquivo_hashes, "r", encoding="utf-8") as arquivo:
+            hashes_anteriores = json.load(arquivo)
+    except (FileNotFoundError, json.JSONDecodeError):
+        hashes_anteriores = {}
+
+    hashes_atuais = {}
+    for nome_arquivo in arquivos:
+        caminho_completo = os.path.join(pasta_logs, nome_arquivo)
+        if not os.path.isfile(caminho_completo):
+            continue
+
+        hash_atual = calcular_hash_arquivo(caminho_completo)
+        hashes_atuais[nome_arquivo] = hash_atual
+        hash_anterior = hashes_anteriores.get(nome_arquivo)
+
+        if hash_anterior is None:
+            status = "novo"
+        elif hash_anterior == hash_atual:
+            status = "inalterado"
+        else:
+            status = "alterado"
+
+        resultado[nome_arquivo] = {
+            "status": status,
+            "hash_atual": hash_atual,
+            "hash_anterior": hash_anterior,
+        }
+
+    try:
+        pasta_config = os.path.dirname(arquivo_hashes)
+        if pasta_config:
+            os.makedirs(pasta_config, exist_ok=True)
+        with open(arquivo_hashes, "w", encoding="utf-8") as arquivo:
+            json.dump(hashes_atuais, arquivo, indent=2)
+    except OSError as erro:
+        print(f"[ERRO] Não foi possível salvar {arquivo_hashes}: {erro}")
+
+    return resultado
 
 
 if __name__ == "__main__":
