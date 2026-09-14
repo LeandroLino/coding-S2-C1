@@ -87,9 +87,6 @@ def main():
             alertas = aplicar_regras(eventos, regras)
 
             brute_force = detectar_brute_force(eventos)
-            # [BÔNUS +0.30] correlação temporal: só conta como brute force se as
-            # falhas ocorrerem dentro de uma janela deslizante (padrão 60s),
-            # não apenas pela contagem total do IP.
             brute_force_temporal = detectar_brute_force_temporal(eventos)
             port_scan = detectar_port_scan(eventos)
             ips_blacklist, _ = verificar_blacklist(eventos, BLACKLIST)
@@ -194,7 +191,6 @@ def main():
             thread_servidor.start()
 
         elif opcao == 10:
-            # [BÔNUS +0.20] hash SHA-256 dos logs para detectar alteracoes entre execucoes
             resultado_integridade = verificar_integridade_logs(PASTA_LOGS)
             if not resultado_integridade:
                 print("[!] Nenhum arquivo de log encontrado para verificar.")
@@ -204,13 +200,11 @@ def main():
                 print(f"  {nome_arquivo}: {info['status'].upper()} (hash: {info['hash_atual'][:12]}...)")
 
         elif opcao == 11:
-            # [BÔNUS +0.20] geracao automatica de logs simulados (trafego normal + ataques)
             pasta_destino = input("Pasta de destino (Enter para 'logs_simulados'): ").strip() or "logs_simulados"
             gerar_logs_simulados(pasta_destino=pasta_destino)
             print(f"[OK] Logs simulados gerados em '{pasta_destino}/'. Aponte PASTA_LOGS para essa pasta para testa-los.")
 
         elif opcao == 12:
-            # [BÔNUS +0.30] permite ao operador criar uma nova regra sem editar o codigo
             print("\n--- Criar nova regra de deteccao ---")
             print("Condicoes suportadas: usuario_privilegiado, porta_critica, path_traversal, xss, reconhecimento")
             id_regra = input("ID da regra (ex: R006): ").strip()
