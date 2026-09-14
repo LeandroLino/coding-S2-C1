@@ -13,10 +13,11 @@ try:
 except (AttributeError, ValueError):
     pass
 
-from coletor import carregar_todos_os_logs
-from regras import carregar_regras, aplicar_regras
+from coletor import carregar_todos_os_logs, verificar_integridade_logs
+from regras import carregar_regras, aplicar_regras, adicionar_regra
 from detector import (
     detectar_brute_force,
+    detectar_brute_force_temporal,
     detectar_port_scan,
     verificar_blacklist,
     gerar_resumo_ameacas,
@@ -32,6 +33,7 @@ from relatorios import (
     gerar_nome_relatorio,
 )
 from servidor_alertas import iniciar_servidor
+from gerador_logs import gerar_logs_simulados
 
 # Configuracoes
 PASTA_LOGS = "logs"
@@ -54,6 +56,9 @@ def exibir_menu():
 ║  7. Enriquecer IPs suspeitos             ║
 ║  8. Exportar relatório JSON              ║
 ║  9. Iniciar servidor de alertas          ║
+║ 10. Verificar integridade dos logs (SHA-256) ║
+║ 11. Gerar logs de teste simulados        ║
+║ 12. Criar regra customizada              ║
 ║  0. Sair                                 ║
 ╚══════════════════════════════════════════╝
 """)
@@ -69,6 +74,7 @@ def main():
     eventos = []
     alertas = []
     resumo_ameacas = []
+    brute_force_temporal = {}
     cache_enriquecimento = {}
     logs_carregados = False
 
@@ -81,6 +87,10 @@ def main():
             alertas = aplicar_regras(eventos, regras)
 
             brute_force = detectar_brute_force(eventos)
+            # [BÔNUS +0.30] correlação temporal: só conta como brute force se as
+            # falhas ocorrerem dentro de uma janela deslizante (padrão 60s),
+            # não apenas pela contagem total do IP.
+            brute_force_temporal = detectar_brute_force_temporal(eventos)
             port_scan = detectar_port_scan(eventos)
             ips_blacklist, _ = verificar_blacklist(eventos, BLACKLIST)
             resumo_ameacas = gerar_resumo_ameacas(brute_force, port_scan, ips_blacklist)
@@ -93,6 +103,10 @@ def main():
             print(f"\n{partes}. Total: {len(eventos)} eventos")
             print(f"Alertas gerados pelas regras: {len(alertas)}")
             print(f"IPs suspeitos no resumo de ameacas: {len(resumo_ameacas)}")
+            if brute_force_temporal:
+                print("\n--- Brute force com correlacao temporal (janela de 60s) ---")
+                for ip, dados in brute_force_temporal.items():
+                    print(f"  {ip}: {dados['tentativas_na_janela']} falhas em {dados['janela_segundos']}s ({dados['severidade']})")
 
         elif opcao == 2:
             if not logs_carregados:
@@ -167,6 +181,7 @@ def main():
                 "eventos": eventos,
                 "alertas": alertas,
                 "resumo_ameacas": resumo_ameacas,
+                "brute_force_correlacao_temporal": brute_force_temporal,
             }
             caminho = gerar_nome_relatorio("saida")
             exportar_relatorio_json(dados_relatorio, caminho)
@@ -177,6 +192,66 @@ def main():
             print(f"Iniciando servidor de alertas na porta {porta} (thread em segundo plano)...")
             thread_servidor = threading.Thread(target=iniciar_servidor, kwargs={"porta": porta}, daemon=True)
             thread_servidor.start()
+
+        elif opcao == 10:
+            # [BÔNUS +0.20] hash SHA-256 dos logs para detectar alteracoes entre execucoes
+            resultado_integridade = verificar_integridade_logs(PASTA_LOGS)
+            if not resultado_integridade:
+                print("[!] Nenhum arquivo de log encontrado para verificar.")
+                continue
+            print("\n--- Integridade dos arquivos de log (SHA-256) ---")
+            for nome_arquivo, info in resultado_integridade.items():
+                print(f"  {nome_arquivo}: {info['status'].upper()} (hash: {info['hash_atual'][:12]}...)")
+
+        elif opcao == 11:
+            # [BÔNUS +0.20] geracao automatica de logs simulados (trafego normal + ataques)
+            pasta_destino = input("Pasta de destino (Enter para 'logs_simulados'): ").strip() or "logs_simulados"
+            gerar_logs_simulados(pasta_destino=pasta_destino)
+            print(f"[OK] Logs simulados gerados em '{pasta_destino}/'. Aponte PASTA_LOGS para essa pasta para testa-los.")
+
+        elif opcao == 12:
+            # [BÔNUS +0.30] permite ao operador criar uma nova regra sem editar o codigo
+            print("\n--- Criar nova regra de deteccao ---")
+            print("Condicoes suportadas: usuario_privilegiado, porta_critica, path_traversal, xss, reconhecimento")
+            id_regra = input("ID da regra (ex: R006): ").strip()
+            nome_regra = input("Nome: ").strip()
+            descricao_regra = input("Descricao: ").strip()
+            fonte_regra = input("Fonte (auth/firewall/web): ").strip()
+            condicao_regra = input("Condicao: ").strip()
+
+            nova_regra = {
+                "id": id_regra,
+                "nome": nome_regra,
+                "descricao": descricao_regra,
+                "fonte": fonte_regra,
+                "condicao": condicao_regra,
+                "severidade_base": 0,
+                "ativa": True,
+            }
+
+            try:
+                nova_regra["severidade_base"] = int(input("Severidade base (0-10): ").strip())
+            except ValueError:
+                print("[!] Valor invalido, usando severidade_base=5.")
+                nova_regra["severidade_base"] = 5
+
+            if condicao_regra == "usuario_privilegiado":
+                valores = input("Usuarios alvo separados por virgula: ").strip()
+                nova_regra["usuarios_alvo"] = [u.strip() for u in valores.split(",") if u.strip()]
+            elif condicao_regra == "porta_critica":
+                valores = input("Portas criticas separadas por virgula: ").strip()
+                nova_regra["portas_criticas"] = [int(p) for p in valores.split(",") if p.strip().isdigit()]
+            elif condicao_regra in ("path_traversal", "xss"):
+                valores = input("Padroes a detectar na URL, separados por virgula: ").strip()
+                nova_regra["padroes"] = [p.strip() for p in valores.split(",") if p.strip()]
+            elif condicao_regra == "reconhecimento":
+                valores = input("URLs suspeitas separadas por virgula: ").strip()
+                nova_regra["urls_suspeitas"] = [u.strip() for u in valores.split(",") if u.strip()]
+            else:
+                print(f"[!] Condicao '{condicao_regra}' nao e reconhecida pelo motor de regras (regras.py).")
+
+            if adicionar_regra(ARQUIVO_REGRAS, nova_regra):
+                print(f"[OK] Regra {id_regra} adicionada em {ARQUIVO_REGRAS}. Recarregue os logs (opcao 1) para aplica-la.")
 
         elif opcao == 0:
             print("Encerrando SecuraPy. Ate logo!")
